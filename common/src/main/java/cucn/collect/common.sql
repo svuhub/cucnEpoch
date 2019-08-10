@@ -1,0 +1,2 @@
+--wx_user表 统计某个二维码的关注量按格式化的天
+select count(*) , days from `wx_user` where u_qr_scene_str like '%APPTongYongYL%' and u_createtime BETWEEN '2019-04-08'  and '2019-04-15'  GROUP BY daysDATE_FORMAT(u_createtime,'%d %b %y')

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input type="button" id="button1" value="签到">
+<script>
+    //绑定函数事件
+    $("#button1").click(function () {
+        $.ajax({
+            url:"http://127.0.0.1:81/A/test/type1",//请求后台的路径
+            type:"post",//请求方式
+            data:null,
+            success:function(data){
+                //此data为后台返回的data
+                console.log(data)
+            },
+            error:function () {
+                //出现错误执行函数
+            },
+            datatype:"text"//返回数据格式如xml json text，不加会自动根据mime判断
+
+        });
+    })
+</script>
+
+</body>
+</html>
