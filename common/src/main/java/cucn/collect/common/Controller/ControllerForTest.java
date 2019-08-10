@@ -95,6 +95,9 @@ public class ControllerForTest {
         return map;
     }
 
+    /*
+     * 好吧
+     * */
     @RequestMapping("/type3")
     @ResponseBody
     public Result result3() {
@@ -199,9 +202,9 @@ public class ControllerForTest {
      */
     @RequestMapping("/type11")
     public void saveDeviceNum(@RequestParam(value = "accessNumber", required = false)
-                                          String accessNumber, HttpServletResponse response) throws UnsupportedEncodingException {
-        if(!StringUtils.isNotBlank(accessNumber)){
-            accessNumber="1";
+                                      String accessNumber, HttpServletResponse response) throws UnsupportedEncodingException {
+        if (!StringUtils.isNotBlank(accessNumber)) {
+            accessNumber = "1";
         }
         Cookie cookie = new Cookie(CookieKeys.OTHER_CHANNEL_DEVICE_NUMBER, accessNumber);
         URLEncoder.encode(CookieKeys.OTHER_CHANNEL_DEVICE_NUMBER, "utf-8");
@@ -296,7 +299,7 @@ public class ControllerForTest {
         }
     }
 
-    @RequestMapping(value="/test20",method = RequestMethod.GET)
+    @RequestMapping(value = "/test20", method = RequestMethod.GET)
     @ResponseBody
     public String test19(String channel, String openId) {
         String key = String.format("%s:%s", "userId", "actionKey");
@@ -304,11 +307,11 @@ public class ControllerForTest {
                 ;
     }
 
-    @RequestMapping(value="/test20",method = RequestMethod.POST)
+    @RequestMapping(value = "/test20", method = RequestMethod.POST)
     @ResponseBody
     public String test20(String channel, String openId) {
-        for(int i=0;i<100;i++){
-            stringRedisTemplate.opsForValue().set("key99"+i,"0");
+        for (int i = 0; i < 100; i++) {
+            stringRedisTemplate.opsForValue().set("key99" + i, "0");
         }
         return "0";
     }
